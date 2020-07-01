@@ -1,0 +1,26 @@
+{
+  "name": "outlook-mailer",
+  "version": "1.0.0",
+  "description": "simple mailer application",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ranjithprabhuk/outlook-mailer.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "typescript",
+    "outlook",
+    "mailer"
+  ],
+  "author": "ranjithprabhuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ranjithprabhuk/outlook-mailer/issues"
+  },
+  "homepage": "https://github.com/ranjithprabhuk/outlook-mailer#readme"
+}
