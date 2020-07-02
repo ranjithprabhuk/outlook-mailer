@@ -1,10 +1,9 @@
-interface ILoginOwnProps {
-    classes: any;
-}
-interface ILoginStateProps {
+export interface ILoginProps {
+    handleSubmit: any;
+    isLoading: boolean;
 }
 
-export type ILoginProps = ILoginOwnProps & ILoginStateProps;
-
-export interface ILoginState {
+export interface ILoginFormParams {
+    username: string;
+    password: string;
 }
