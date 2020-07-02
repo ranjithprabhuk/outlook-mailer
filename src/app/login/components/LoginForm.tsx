@@ -19,26 +19,27 @@ const validate = (values: ILoginFormParams): FormErrors<ILoginFormParams> => {
   return errors;
 };
 
-const Login: React.FC<ILoginProps & InjectedFormProps<{}, ILoginProps>> = (props: ILoginProps) => {
+const Login: React.FC<ILoginProps & InjectedFormProps<{}, ILoginProps>> = (props) => {
   const { handleSubmit } = props;
+  
   return (
     <form onSubmit={handleSubmit} noValidate={true}>
       <Field
         name='username'
         type='text'
         component={InputComponent}
-        label='Name *'
+        label='Username:'
         placeHolder='Username'
       />
       <Field
         name='password'
         type='password'
         component={InputComponent}
-        label='Name *'
+        label='Password:'
         placeHolder='Password'
       />
       <div className='form-group'>
-        <button type='submit' className='btn btn-primary btn-block btn-lg'>
+        <button type='submit' className='btn btn-primary btn-block btn-lg' disabled={!props.valid || props.submitting}>
           Login
         </button>
       </div>
