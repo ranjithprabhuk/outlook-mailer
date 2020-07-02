@@ -64,6 +64,7 @@
     "@types/react-test-renderer": "^16.0.0",
     "@types/recharts": "^1.0.21",
     "@types/redux-devtools": "^3.0.42",
+    "@types/redux-form": "^8.2.6",
     "@types/redux-mock-store": "^0.0.13",
     "classnames": "^2.2.6",
     "cross-env": "^5.1.6",
@@ -103,7 +104,7 @@
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.9",
-    "recharts": "^1.1.0",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "redux-form": "^8.3.6"
   }
 }
