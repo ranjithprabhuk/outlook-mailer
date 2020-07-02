@@ -4,7 +4,15 @@
   "description": "simple mailer application",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "build:webpack": "cross-env NODE_ENV=production webpack --config config/webpack.prod.config.js  --progress --profile --colors",
+    "build": "npm run clean && npm run build:webpack",
+    "clean": "rimraf build",
+    "start": "npm run clean && webpack-dev-server --config config/webpack.dev.config.js --progress --profile --colors --port 3000",
+    "test": "npm run clean && jest",
+    "test:watch": "npm test -- --watch",
+    "lint": "tslint -p tsconfig.json",
+    "server": "node server.js",
+    "heroku-postbuild": "npm run build:webpack"
   },
   "repository": {
     "type": "git",
@@ -22,5 +30,80 @@
   "bugs": {
     "url": "https://github.com/ranjithprabhuk/outlook-mailer/issues"
   },
-  "homepage": "https://github.com/ranjithprabhuk/outlook-mailer#readme"
+  "homepage": "https://github.com/ranjithprabhuk/outlook-mailer#readme",
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "setupFiles": [
+      "./config/test.shim.js",
+      "./config/test.setup.js"
+    ],
+    "setupTestFrameworkScriptFile": "./config/test.setup.ts",
+    "testRegex": "/*.spec.(ts|tsx|js)$"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.6",
+    "@types/enzyme": "^3.1.6",
+    "@types/es6-promise": "^3.3.0",
+    "@types/jest": "^22.0.1",
+    "@types/lodash": "^4.14.64",
+    "@types/material-ui": "^0.21.1",
+    "@types/node": "^9.6.15",
+    "@types/prop-types": "^15.5.2",
+    "@types/react": "^16.0.34",
+    "@types/react-dom": "^16.0.3",
+    "@types/react-redux": "^5.0.14",
+    "@types/react-router-dom": "^4.0.4",
+    "@types/react-router-redux": "^5.0.1",
+    "@types/react-test-renderer": "^16.0.0",
+    "@types/recharts": "^1.0.21",
+    "@types/redux-devtools": "^3.0.42",
+    "@types/redux-mock-store": "^0.0.13",
+    "classnames": "^2.2.6",
+    "cross-env": "^5.1.6",
+    "css-loader": "^0.28.11",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "express": "^4.15.3",
+    "html-loader": "^0.5.4",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^22.0.3",
+    "node-sass": "^4.14.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-hot-loader": "^4.1.0",
+    "react-test-renderer": "^16.2.0",
+    "react-transform-catch-errors": "^1.0.2",
+    "react-transform-hmr": "^1.0.4",
+    "redbox-react": "^1.5.0",
+    "redux-mock-store": "^1.2.3",
+    "rimraf": "^2.6.1",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "ts-jest": "^22.0.1",
+    "ts-loader": "^4.3.0",
+    "tslint": "^5.3.2",
+    "tslint-loader": "^3.5.3",
+    "typescript": "^2.6.2",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^2.0.14",
+    "webpack-dev-middleware": "^3.1.2",
+    "webpack-dev-server": "^3.1.3",
+    "webpack-hot-middleware": "^2.18.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "lodash": "^4.17.4",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "recharts": "^1.1.0",
+    "redux": "^3.6.0"
+  }
 }
