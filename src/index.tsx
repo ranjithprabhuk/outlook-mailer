@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { createHashHistory } from 'history';
 import { Provider } from 'react-redux';
+import { worker } from './utils/mock-service';
 
 import OutlookMailer from './app';
 import './scss/style.scss';
@@ -21,3 +22,6 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('outlook-mailer'),
 );
+
+// start the mock service here
+worker.start();
