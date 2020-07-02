@@ -56,10 +56,10 @@
     "@types/material-ui": "^0.21.1",
     "@types/node": "^9.6.15",
     "@types/prop-types": "^15.5.2",
-    "@types/react": "^16.0.34",
-    "@types/react-dom": "^16.0.3",
-    "@types/react-redux": "^5.0.14",
-    "@types/react-router-dom": "^4.0.4",
+    "@types/react": "16.8.24",
+    "@types/react-dom": "16.8.5",
+    "@types/react-redux": "^7.1.1",
+    "@types/react-router-dom": "^4.3.4",
     "@types/react-router-redux": "^5.0.1",
     "@types/react-test-renderer": "^16.0.0",
     "@types/recharts": "^1.0.21",
@@ -76,8 +76,6 @@
     "html-webpack-plugin": "^3.2.0",
     "jest": "^22.0.3",
     "node-sass": "^4.14.1",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
     "react-hot-loader": "^4.1.0",
     "react-test-renderer": "^16.2.0",
     "react-transform-catch-errors": "^1.0.2",
@@ -99,12 +97,14 @@
     "webpack-hot-middleware": "^2.18.0"
   },
   "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "bootstrap": "^4.5.0",
     "lodash": "^4.17.4",
     "react-redux": "^5.0.5",
-    "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.9",
     "redux": "^3.6.0",
-    "redux-form": "^8.3.6"
+    "redux-form": "^8.3.6",
+    "react-router-dom": "^5.0.1"
   }
 }
