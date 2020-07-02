@@ -10,4 +10,3 @@ export function configureStore(history: History): Store<IAppState> {
 
   return createStore<IAppState>(rootReducer, enhancers);
 }
-

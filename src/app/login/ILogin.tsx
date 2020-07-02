@@ -7,3 +7,9 @@ export interface ILoginFormParams {
     username: string;
     password: string;
 }
+
+export interface IUserState {
+    isLoggedIn: boolean;
+    username: string;
+    name: string;
+}
