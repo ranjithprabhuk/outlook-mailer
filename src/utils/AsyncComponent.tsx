@@ -27,13 +27,13 @@ class AsyncComponent extends React.PureComponent<IAsyncComponentProps, IAsyncCom
     }
   }
 
-  public renderLoader() {
+  public renderLoader(): React.ReactElement<any> {
     return (
       <div>Component Loading Inprogress</div>
     );
   }
 
-  public render() {
+  public render(): React.ReactElement<any> {
     const { Component } = this.state;
     return Component ? <Component /> : this.renderLoader();
   }
