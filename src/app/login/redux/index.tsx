@@ -1,2 +1,4 @@
+export { default } from './reducer';
 export { loginActionTypes } from './actionTypes';
-export * as loginActions from './actions';
+export { validateUser } from './actions';
+

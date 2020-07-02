@@ -44,7 +44,7 @@ const Login: React.FC<ILoginProps & InjectedFormProps<{}, ILoginProps>> = (props
       </div>
     </form>
   );
-}
+};
 
 const LoginForm = reduxForm<{}, ILoginProps>({
   destroyOnUnmount: false,

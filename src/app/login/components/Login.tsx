@@ -4,7 +4,6 @@ import LoginForm from './LoginForm';
 
 import '../login.scss';
 
-
 export const Login: React.FC<ILoginProps> = (props: ILoginProps) => {
     return (
       <div className='login-container'>
@@ -14,5 +13,4 @@ export const Login: React.FC<ILoginProps> = (props: ILoginProps) => {
         </div>
       </div>
     );
-}
-
+};

@@ -5,7 +5,7 @@ import { Login } from './components';
 
 const mapStateToProps = (state: IAppState) => {
   return {
-    state
+    state,
   };
 };
 
