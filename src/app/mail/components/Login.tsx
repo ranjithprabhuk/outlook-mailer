@@ -13,9 +13,9 @@ export const Mail: React.FC<ILoginProps> = (props: ILoginProps) => {
       <nav className='navbar navbar-expand-md navbar-light bg-light'>
         <div className='collapse navbar-collapse justify-content-between'>
           <ul className='navbar-nav mr-auto'>
-            <ButtonComponent buttonText='New' value={5} />
-            <ButtonComponent buttonText='Archived' value={10} />
-            <ButtonComponent buttonText='Total' value={15} />
+            <ButtonComponent text='New' value={5} />
+            <ButtonComponent text='Archived' value={10} />
+            <ButtonComponent text='Total' value={15} />
           </ul>
           <ul className='navbar-nav'>
             <input className='form-control mr-sm-2' type='search' placeholder='Search' aria-label='Search' />

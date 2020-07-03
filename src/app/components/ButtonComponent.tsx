@@ -1,8 +1,13 @@
 import * as React from 'react';
 
-const ButtonComponent: React.SFC<any> = (props: any) => (
+export interface IButtonComponent {
+    text: string;
+    value: any;
+}
+
+const ButtonComponent: React.SFC<IButtonComponent> = (props: IButtonComponent) => (
     <button className='btn btn-outline-primary' type='button' {...props}>
-        {props.buttonText} {props.value && <span className='badge badge-light'>{props.value}</span>}
+        {props.text} {props.value && <span className='badge badge-light'>{props.value}</span>}
     </button>
 );
 
