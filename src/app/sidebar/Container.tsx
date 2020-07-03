@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
-// import { IAppState } from '../../Model';
+import { IAppState } from '../../Model';
 import { displayMails } from './redux/actions';
 import { SideBar } from './SideBar';
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: IAppState) => {
   return {
     mails: state.mail.mails || [],
+    selectedCategory: state.mailHeader.selectedCategory,
   };
 };
 

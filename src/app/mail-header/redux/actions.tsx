@@ -1,10 +1,11 @@
-import { mailActionTypes } from './actionTypes';
+import { mailHeaderActionTypes } from './actionTypes';
+import { IAction } from '../../../Model';
 
-export const displayMails = (category: string): any => {
+export const updateSelectedCategory = (selectedCategory: string): IAction => {
   return {
-    type: mailActionTypes.DISPLAY_EMAILS,
+    type: mailHeaderActionTypes.UPDATE_CATEGORY,
     payload: {
-      category,
+      selectedCategory,
     },
   };
 };

@@ -1,7 +1,8 @@
-import { IMailCard } from '../components/MailCard';
+import { IMails } from '../mail/IMail';
 
 export interface ISideBarProps {
-    mails: IMailCard[];
+    mails: IMails[];
+    selectedCategory: string;
 }
 
 export interface ISideBarState {
