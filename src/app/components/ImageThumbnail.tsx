@@ -7,7 +7,7 @@ export interface IImageThumbnail {
 }
 
 const ImageThumbnail: React.SFC<IImageThumbnail> = (props: IImageThumbnail) => (
-    <img title={props.title || ''} width='38px' src={props.src} className='rounded-circle' alt={props.title.substr(0,1)} {...props} />
+    <img title={props.title || ''} width='38px' src={props.src} className='rounded-circle' alt={props.title.substr(0, 1)} {...props} />
 );
 
 export default ImageThumbnail;

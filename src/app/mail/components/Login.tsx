@@ -7,7 +7,6 @@ import '../mail.scss';
 
 const markdown = '# This is a H1  \n## This is a H2  \n###### This is a H6';
 export const Mail: React.FC<ILoginProps> = (props: ILoginProps) => {
-
   return (
     <div>
       <nav className='navbar navbar-expand-md navbar-light bg-light'>
