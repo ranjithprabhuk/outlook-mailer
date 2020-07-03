@@ -19,11 +19,11 @@ const validate = (values: ILoginFormParams): FormErrors<ILoginFormParams> => {
   return errors;
 };
 
-const Login: React.FC<ILoginProps & InjectedFormProps<{}, ILoginProps>> = (props) => {
-  const { handleSubmit } = props;
-  
+const Login: React.FC<ILoginProps & InjectedFormProps<{}, ILoginProps>> = (props: any) => {
+  const { validateUser } = props;
+
   return (
-    <form onSubmit={handleSubmit} noValidate={true}>
+    <form noValidate={true}>
       <Field
         name='username'
         type='text'
@@ -39,7 +39,7 @@ const Login: React.FC<ILoginProps & InjectedFormProps<{}, ILoginProps>> = (props
         placeHolder='Password'
       />
       <div className='form-group'>
-        <button type='submit' className='btn btn-primary btn-block btn-lg' disabled={!props.valid || props.submitting}>
+        <button type='button' onClick={() => validateUser(props.state.form.user.values)} className='btn btn-primary btn-block btn-lg' disabled={!props.valid || props.submitting}>
           Login
         </button>
       </div>

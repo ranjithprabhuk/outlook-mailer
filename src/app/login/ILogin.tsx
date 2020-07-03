@@ -1,6 +1,5 @@
 export interface ILoginProps {
-    handleSubmit: any;
-    isLoading: boolean;
+    validateUser: any;
 }
 
 export interface ILoginFormParams {
@@ -12,4 +11,5 @@ export interface IUserState {
     isLoggedIn: boolean;
     username: string;
     name: string;
+    token: string;
 }

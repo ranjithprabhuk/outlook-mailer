@@ -1,7 +1,8 @@
-
 import { connect } from 'react-redux';
 import { IAppState } from '../../Model';
 import { Login } from './components';
+import { validateUser } from './redux/actions';
+import { ILoginFormParams } from './ILogin';
 
 const mapStateToProps = (state: IAppState) => {
   return {
@@ -11,6 +12,7 @@ const mapStateToProps = (state: IAppState) => {
 
 const mapDispatchToProps = (dispatch: Function) => {
   return {
+    validateUser: (credentials: ILoginFormParams) => dispatch(validateUser(credentials)),
   };
 };
 
