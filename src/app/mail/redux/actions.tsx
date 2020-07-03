@@ -3,22 +3,22 @@ import { IAction } from '../../../Model';
 import axios from 'axios';
 import { APP_CONFIG } from '../../../utils/app.constants';
 
-export const setUserInformation = (data: any): IAction => {
+export const setMailInfo = (mails: any): IAction => {
   return {
-    type: mailActionTypes.VALIDATE_USER,
+    type: mailActionTypes.FETCH_MAILS,
     payload: {
-      ...data,
+      mails,
     },
   };
 };
 
-export const validateUser = (credentials: any): Function => {
+export const fetchMails = (): Function => {
   return (dispatch: Function) => {
-    setUserInformation({} as any); // clear the user information if it exists
-    return axios.get(`${APP_CONFIG.serviceBase}user.json?user=${credentials.username}&password=${credentials.username}`)
+    setMailInfo({} as any); // clear the mail information
+    return axios.get(`${APP_CONFIG.serviceBase}mails.json`)
       .then(res => {
-        if (res.data && res.data.token) {
-          dispatch(setUserInformation(res.data));
+        if (res.data) {
+          dispatch(setMailInfo(res.data));
           return res.data;
         }
       }).catch(() => {

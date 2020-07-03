@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 export interface IMailCard {
+    id?: string;
     sender: string;
     content: any;
 }

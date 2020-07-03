@@ -6,14 +6,16 @@ import userReducer from './app/login/redux';
 import mailHeaderReducer from './app/mail-header/redux';
 import sidebarReducer from './app/sidebar/redux';
 import mailViewerReducer from './app/mail-header/redux';
+import mailReducer from './app/mail/redux';
 
 const rootReducer: Reducer<IAppState> = combineReducers<IAppState>({
   routing: routerReducer,
   user: userReducer as any,
   form: formReducer,
-  mail: mailHeaderReducer as any,
+  mailHeader: mailHeaderReducer as any,
   sidebar: sidebarReducer as any,
   mailViewer: mailViewerReducer as any,
+  mail: mailReducer as any,
 });
 
 export { IAppState, rootReducer };

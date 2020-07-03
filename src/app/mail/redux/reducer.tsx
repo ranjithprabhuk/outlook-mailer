@@ -1,16 +1,26 @@
 import { mailActionTypes } from './actionTypes';
 import { IAction } from '../../../Model';
+import { IMailState, IMails } from '../IMail';
 
-const defaultState: any = {
-  username: '',
-  name: '',
-  token: localStorage.getItem('auth_token') || '',
+const defaultState: IMailState = {
+  mails: [],
 };
 
-const userReducer = (state: any = defaultState, action: IAction): any => {
+const mailReducer = (state: IMailState = defaultState, action: IAction): IMailState => {
   switch (action.type) {
-    case mailActionTypes.VALIDATE_USER: {
-      return { ...state, ...action.payload  };
+    case mailActionTypes.FETCH_MAILS: {
+      const mails = action.payload.mails;
+      const newMails: IMails[] = [];
+      const archivedMails: IMails[] = [];
+      (mails || []).forEach((mail: IMails) => {
+        if (mail.isNew) {
+          newMails.push(mail);
+        }
+        if (mail.isArchived) {
+          archivedMails.push(mail);
+        }
+      });
+      return { ...state, mails, newMails, archivedMails };
     }
     default: {
       return state;
@@ -18,4 +28,4 @@ const userReducer = (state: any = defaultState, action: IAction): any => {
   }
 };
 
-export default userReducer;
+export default mailReducer;
