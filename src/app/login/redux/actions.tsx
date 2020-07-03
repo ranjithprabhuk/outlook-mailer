@@ -12,6 +12,7 @@ export const validateUser = (credentials: ILoginFormParams): Function => {
       .then(res => {
         if (res.data && res.data.token) {
           dispatch(setUserInformation(res.data));
+          return res.data;
         }
       }).catch(() => {
         // todo: write a commom block to handle the exceptions
