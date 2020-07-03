@@ -55,11 +55,6 @@ module.exports = options => ({
         loader: "html-loader"
       },
       {
-        test: /\.json$/,
-        include: options.srcs,
-        loader: "json-loader"
-      },
-      {
         test: /\.(mp4|webm)$/,
         include: options.srcs,
         loader: "url-loader?limit=10000"
