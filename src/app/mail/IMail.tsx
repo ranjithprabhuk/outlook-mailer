@@ -17,5 +17,6 @@ export interface IMails {
     sender: string,
     content: string
     isNew: boolean,
-    isArchived: boolean
+    isArchived: boolean,
+    senderImageSrc: string;
 }
