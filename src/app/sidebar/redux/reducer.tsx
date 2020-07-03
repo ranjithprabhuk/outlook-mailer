@@ -4,12 +4,12 @@ import { IAction } from '../../../Model';
 import { ISideBarState } from '../ISideBar';
 
 const defaultState: ISideBarState = {
-  selectedMail: '',
+  selectedMail: null,
 };
 
 const sidebarReducer = (state: ISideBarState = defaultState, action: IAction): ISideBarState => {
   switch (action.type) {
-    case sideBarActionTypes.DISPLAY_SELECTED_EMAILS: {
+    case sideBarActionTypes.UPDATE_SELECTED_EMAILS: {
       return { ...state, ...action.payload  };
     }
     default: {

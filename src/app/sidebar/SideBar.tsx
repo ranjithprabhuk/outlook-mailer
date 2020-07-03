@@ -5,13 +5,18 @@ import { IMails } from '../mail/IMail';
 import { MailCategory } from '../mail-header/IMailHeader';
 
 export const SideBar: React.FC<ISideBarProps> = (props: ISideBarProps) => {
-  const { selectedCategory, mails } = props;
+  const { selectedCategory, mails, updateSelectedMail } = props;
   const mailsToBeDisplayed = filterMails(mails, selectedCategory);
   return (
     <div className='col-2 sidebar'>
       <div className='mails'>
-        {mailsToBeDisplayed.map((mail: IMails) =>
-          (<MailCard key={mail.id} sender={mail.sender} content={mail.content} />))}
+        {mailsToBeDisplayed.map((mail: IMails) => (
+          <MailCard
+            key={mail.id}
+            sender={mail.sender}
+            content={mail.content}
+            onClick={() => updateSelectedMail(mail)}
+          />))}
       </div>
     </div>
   );
@@ -22,5 +27,5 @@ const filterMails = (mails: IMails[], category: string): IMails[] => {
     return mails.filter((mail: any) => mail[`is${category}`]);
   }
 
-  return mails;
+  return mails.filter((mail: IMails) => !mail.isArchived);
 };

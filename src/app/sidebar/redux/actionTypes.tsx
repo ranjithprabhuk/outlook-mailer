@@ -1,3 +1,3 @@
 export const sideBarActionTypes = {
-    DISPLAY_SELECTED_EMAILS: '[sidebar] display the selected emails',
+    UPDATE_SELECTED_EMAILS: '[sidebar] update the selected emails',
 };

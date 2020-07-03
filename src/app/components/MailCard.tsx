@@ -4,10 +4,11 @@ export interface IMailCard {
     id?: string;
     sender: string;
     content: any;
+    onClick?: any;
 }
 
 const MailCard: React.SFC<IMailCard> = (props: IMailCard) => (
-    <div className='mail-card'>
+    <div className='mail-card' onClick={() => props.onClick()}>
         <h6 className='mail-title truncate'>{props.sender}</h6>
         <p className='mail-text truncate'>{props.content}</p>
     </div>

@@ -3,7 +3,7 @@ import { ButtonComponent, ImageThumbnail } from '../components';
 import { IMailHeaderProps, MailCategory } from './IMailHeader';
 
 export const MailHeader: React.FC<IMailHeaderProps> = (props: IMailHeaderProps) => {
-  const { mails, archivedMails, newMails, updateSelectedCategory  } = props;
+  const { mails, archivedMails, newMails, updateSelectedCategory } = props;
   const { NEW, ARCHIVED, TOTAL } = MailCategory;
   return (
     <nav className='navbar navbar-expand-sm navbar-light bg-light'>
@@ -13,7 +13,8 @@ export const MailHeader: React.FC<IMailHeaderProps> = (props: IMailHeaderProps) 
             && <ButtonComponent text={NEW} value={newMails.length} onClick={() => updateSelectedCategory(NEW)} />}
           {archivedMails
             && <ButtonComponent text={ARCHIVED} value={archivedMails.length} onClick={() => updateSelectedCategory(ARCHIVED)} />}
-          <ButtonComponent text={TOTAL} value={mails.length} onClick={() => updateSelectedCategory(TOTAL)} />
+          {archivedMails
+            && <ButtonComponent text={TOTAL} value={mails.length - archivedMails.length} onClick={() => updateSelectedCategory(TOTAL)} />}
         </ul>
         <ul className='navbar-nav'>
           <input className='form-control mr-sm-2' type='search' placeholder='Search' aria-label='Search' />

@@ -1,10 +1,11 @@
 import { sideBarActionTypes } from './actionTypes';
+import { IMails } from '../../mail/IMail';
 
-export const displayMails = (selectedEmail: string): any => {
+export const updateSelectedMail = (selectedMail: IMails): any => {
   return {
-    type: sideBarActionTypes.DISPLAY_SELECTED_EMAILS,
+    type: sideBarActionTypes.UPDATE_SELECTED_EMAILS,
     payload: {
-      selectedEmail,
+      selectedMail,
     },
   };
 };
