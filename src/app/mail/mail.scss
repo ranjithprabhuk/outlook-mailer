@@ -15,6 +15,13 @@ $mailviewwer-width: calc(100vw - 270px);
     .mail-card {
         border-bottom: 1px solid var(--gray);
         padding: 0.5rem;
+
+        &:hover {
+            cursor: pointer;
+            padding-left: 1rem;
+            transition: all 0.1s ease-in;
+            box-shadow: 1px 1px 1px;
+        }
     }
 
     .mail-title {
