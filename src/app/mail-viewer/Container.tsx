@@ -5,7 +5,7 @@ import { MailViewer } from './MailViewer';
 
 const mapStateToProps = (state: IAppState) => {
   return {
-    state,
+    selectedMail: state.sidebar.selectedMail,
   };
 };
 

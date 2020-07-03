@@ -1,8 +1,9 @@
+import { IMails } from '../mail/IMail';
+
 export interface IMailViewerProps {
-    sender: string;
-    content: string;
+    selectedMail: IMails | null;
 }
 
 export interface IMailViewerState {
-    selectedMail: string;
+    selectedMail: IMails | null;
 }

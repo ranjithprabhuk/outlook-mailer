@@ -1,3 +1,3 @@
-export const mailActionTypes = {
-    DISPLAY_EMAILS: '[mail] display the emails based on the category',
+export const mailHeaderActionTypes = {
+    UPDATE_CATEGORY: '[mail-header] update the selected category',
 };

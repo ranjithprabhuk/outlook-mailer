@@ -5,7 +5,7 @@ import { IMailViewerState } from '../IMailViewer';
 
 
 const defaultState: IMailViewerState = {
-  selectedMail: '',
+  selectedMail: null,
 };
 
 const mailHeaderReducer = (state: IMailViewerState = defaultState, action: IAction): IMailViewerState => {

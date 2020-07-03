@@ -1,17 +1,19 @@
 import { connect } from 'react-redux';
 import { IAppState } from '../../Model';
-import { displayMails } from './redux/actions';
+import { updateSelectedMail } from './redux/actions';
 import { SideBar } from './SideBar';
+import { IMails } from '../mail/IMail';
 
 const mapStateToProps = (state: IAppState) => {
   return {
-    state,
+    mails: state.mail.mails || [],
+    selectedCategory: state.mailHeader.selectedCategory,
   };
 };
 
 const mapDispatchToProps = (dispatch: Function) => {
   return {
-    displayMails: (category: string) => dispatch(displayMails(category)),
+    updateSelectedMail: (mail: IMails) => dispatch(updateSelectedMail(mail)),
   };
 };
 

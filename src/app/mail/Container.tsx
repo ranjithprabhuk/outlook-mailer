@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { IAppState } from '../../Model';
-import { validateUser } from './redux/actions';
+import { fetchMails } from './redux/actions';
 import Mail from './Mail';
 
 const mapStateToProps = (state: IAppState) => {
@@ -11,7 +11,7 @@ const mapStateToProps = (state: IAppState) => {
 
 const mapDispatchToProps = (dispatch: Function) => {
   return {
-    validateUser: (credentials: any) => dispatch(validateUser(credentials)),
+    fetchMails: () => dispatch(fetchMails()),
   };
 };
 

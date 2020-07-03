@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
 import { IAppState } from '../../Model';
-import { displayMails } from './redux/actions';
+import { updateSelectedCategory } from './redux/actions';
 import { MailHeader } from './MailHeader';
 
 const mapStateToProps = (state: IAppState) => {
   return {
-    state,
+    ...state.mail,
   };
 };
 
 const mapDispatchToProps = (dispatch: Function) => {
   return {
-    displayMails: (category: string) => dispatch(displayMails(category)),
+    updateSelectedCategory: (category: string) => dispatch(updateSelectedCategory(category)),
   };
 };
 

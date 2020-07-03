@@ -1,15 +1,15 @@
 
-import { mailActionTypes } from './actionTypes';
+import { mailHeaderActionTypes } from './actionTypes';
 import { IAction } from '../../../Model';
-import { IMailHeaderState } from '../IMailHeader';
+import { IMailHeaderState, MailCategory } from '../IMailHeader';
 
 const defaultState: IMailHeaderState = {
-  from: '',
+  selectedCategory: MailCategory.NEW,
 };
 
-const mailViewerReducer = (state: IMailHeaderState = defaultState, action: IAction): IMailHeaderState => {
+const mailHeaderReducer = (state: IMailHeaderState = defaultState, action: IAction): IMailHeaderState => {
   switch (action.type) {
-    case mailActionTypes.DISPLAY_EMAILS: {
+    case mailHeaderActionTypes.UPDATE_CATEGORY: {
       return { ...state, ...action.payload  };
     }
     default: {
@@ -18,4 +18,4 @@ const mailViewerReducer = (state: IMailHeaderState = defaultState, action: IActi
   }
 };
 
-export default mailViewerReducer;
+export default mailHeaderReducer;
