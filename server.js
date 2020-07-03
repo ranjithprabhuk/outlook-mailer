@@ -12,5 +12,5 @@ app.get('/*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.info(`Material-Magic listening on port ${PORT}!`);
+  console.info(`Outlook-Mailer listening on port ${PORT}!`);
 });
