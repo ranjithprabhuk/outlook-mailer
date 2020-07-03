@@ -3,5 +3,5 @@ export const labels = {
 };
 
 export const APP_CONFIG = {
-  serviceBase: 'https://github.com/ranjitprabhuk/',
+  serviceBase: '/assets/json/',
 };
