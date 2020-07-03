@@ -4,7 +4,7 @@ const InputComponent: React.SFC<any> = (props: any) => (
     <div className='form-group'>
         <label>{props.label}</label>
         <input
-            className={props.meta.error && props.meta.touched ? 'form-control is-invalid' : 'form-control'}
+            className={props.meta && props.meta.error && props.meta.touched ? 'form-control is-invalid' : 'form-control'}
             {...props.input}
             type={props.type}
             placeholder={props.placeHolder}
@@ -13,7 +13,7 @@ const InputComponent: React.SFC<any> = (props: any) => (
             step={props.step}
             disabled={props.disabled}
         />
-        {props.meta.touched && <div className='invalid-feedback'>{props.meta.error}</div>}
+        {props.meta && props.meta.touched && <div className='invalid-feedback'>{props.meta.error}</div>}
     </div>
 );
 

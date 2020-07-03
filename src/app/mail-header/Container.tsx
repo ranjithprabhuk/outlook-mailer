@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { IAppState } from '../../Model';
-import { updateSelectedCategory } from './redux/actions';
+import { updateSelectedCategory, updateSearchText } from './redux/actions';
 import { MailHeader } from './MailHeader';
 
 const mapStateToProps = (state: IAppState) => {
@@ -12,6 +12,7 @@ const mapStateToProps = (state: IAppState) => {
 const mapDispatchToProps = (dispatch: Function) => {
   return {
     updateSelectedCategory: (category: string) => dispatch(updateSelectedCategory(category)),
+    updateSearchText: (searchText: string) => dispatch(updateSearchText(searchText)),
   };
 };
 

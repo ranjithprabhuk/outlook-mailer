@@ -9,3 +9,12 @@ export const updateSelectedCategory = (selectedCategory: string): IAction => {
     },
   };
 };
+
+export const updateSearchText = (searchText: string): IAction => {
+  return {
+    type: mailHeaderActionTypes.UPDATE_SEARCH_TEXT,
+    payload: {
+      searchText,
+    },
+  };
+};
