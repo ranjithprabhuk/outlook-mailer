@@ -3,7 +3,6 @@ import { loginActionTypes } from './actionTypes';
 import { IAction } from '../../../Model';
 
 const defaultState: IUserState = {
-  isLoggedIn: false,
   username: '',
   name: '',
   token: localStorage.getItem('auth_token') || '',
@@ -12,7 +11,7 @@ const defaultState: IUserState = {
 const userReducer = (state: IUserState = defaultState, action: IAction): IUserState => {
   switch (action.type) {
     case loginActionTypes.VALIDATE_USER: {
-      return { ...state, isLoggedIn: action.payload.isLoggedIn  };
+      return { ...state, ...action.payload  };
     }
     default: {
       return state;
