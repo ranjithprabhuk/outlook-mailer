@@ -1,2 +1,1 @@
-export { default as Login } from './Container';
-export { IUserState } from './ILogin';
+export { default as Mail } from './Container';

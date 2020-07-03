@@ -4,7 +4,7 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 import { Login } from './login';
 import { IAppState } from '../Model';
 import { ConnectedRouter } from 'react-router-redux';
-import { Mail } from './mail/components';
+import { Mail } from './mail';
 
 const NoMatch = () => <h1 style={{ color: 'red' }}>Page not found!</h1>;
 

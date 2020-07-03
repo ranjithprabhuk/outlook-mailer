@@ -1,1 +1,1 @@
-export { Mail } from './Login';
+export { MailPage } from './Mail';
