@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = require('./webpack.shared.config')({
   mode: 'production',
@@ -29,6 +30,9 @@ module.exports = require('./webpack.shared.config')({
         minifyURLs: true,
       },
       inject: true,
-    })
-  ],
+    }),
+    new CopyPlugin( [
+      { from: 'src/assets', to: 'assets' },
+    ]),
+  ]
 });
