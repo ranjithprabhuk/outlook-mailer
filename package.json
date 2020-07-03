@@ -34,7 +34,11 @@
   "jest": {
     "verbose": true,
     "testURL": "http://localhost/",
-    "moduleFileExtensions": ["ts", "tsx", "js"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
@@ -101,6 +105,7 @@
     "lodash": "^4.17.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-markdown": "^4.3.1",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.9",
