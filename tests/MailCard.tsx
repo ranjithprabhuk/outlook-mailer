@@ -3,7 +3,7 @@ import { render } from 'enzyme';
 import { MailCard } from '../src/app/components';
 
 describe('Test case for Mail Card Component', () => {
-    const props = {sender: 'Ranjithprabhu', content: 'Some dunmmu mail content'}
+    const props = {sender: 'Ranjithprabhu', content: 'Some dunmmu mail content'};
     const wrapper = render(<MailCard {...props} />);
 
     it('Mail card component creation', () => {

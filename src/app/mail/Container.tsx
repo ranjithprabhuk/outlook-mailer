@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { IAppState } from '../../Model';
 import { validateUser } from './redux/actions';
-import Mail from './mail';
+import Mail from './Mail';
 
 const mapStateToProps = (state: IAppState) => {
   return {
