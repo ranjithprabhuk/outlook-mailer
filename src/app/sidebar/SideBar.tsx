@@ -4,17 +4,27 @@ import { ISideBarProps } from './ISideBar';
 import { IMails } from '../mail/IMail';
 import { MailCategory } from '../mail-header/IMailHeader';
 
-const filterMails = (mails: IMails[], category: string): IMails[] => {
+const hasSearchText = (mail: IMails, searchText: string): boolean => {
+  if (!searchText) {
+    return true;
+  }
+  return mail.content.includes(searchText)
+    || mail.subject.includes(searchText)
+    || mail.sender.includes(searchText)
+    || mail.from.includes(searchText);
+};
+
+const filterMails = (mails: IMails[], category: string, searchText: string): IMails[] => {
   if (category !== MailCategory.TOTAL) {
-    return mails.filter((mail: any) => mail[`is${category}`]);
+    return mails.filter((mail: any) => mail[`is${category}`] && hasSearchText(mail, searchText));
   }
 
-  return mails.filter((mail: IMails) => !mail.isArchived);
+  return mails.filter((mail: IMails) => !mail.isArchived && hasSearchText(mail, searchText));
 };
 
 export const SideBar: React.FC<ISideBarProps> = (props: ISideBarProps) => {
-  const { selectedCategory, mails, updateSelectedMail } = props;
-  const mailsToBeDisplayed = filterMails(mails, selectedCategory);
+  const { selectedCategory, mails, updateSelectedMail, searchText } = props;
+  const mailsToBeDisplayed = filterMails(mails, selectedCategory, searchText);
   return (
     <div className='col-2 sidebar'>
       <div className='mails'>
