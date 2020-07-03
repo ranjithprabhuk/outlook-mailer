@@ -1,1 +1,6 @@
 // Here you can add other styles
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

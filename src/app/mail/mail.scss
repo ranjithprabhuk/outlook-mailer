@@ -1,0 +1,65 @@
+$sidebar-width: 250px;
+$mailviewwer-width: calc(100vw - 270px);
+
+.btn {
+    margin: 0rem 0.5rem;
+}
+
+.sidebar {
+    float: left;
+    width: $sidebar-width !important;
+    max-width: $sidebar-width !important;
+    border-right: 4px solid var(--light);
+    padding: 0rem !important;
+
+    .mail-card {
+        border-bottom: 1px solid var(--gray);
+        padding: 0.5rem;
+    }
+
+    .mail-title {
+        margin-bottom: 0rem;
+    }
+    .mail-text {
+        font-size: 0.75rem;
+        margin-bottom: 0rem;
+    }
+}
+
+.mail-viewer {
+    float: left;
+    width: $mailviewwer-width !important;
+    max-width: $mailviewwer-width !important;
+
+    .mail-buttons {
+        margin: 0.5rem 0rem;
+        .btn:first-child {
+            margin-left: 0rem;
+        }
+    }
+
+    .mail-user-thumbnail, .mail-info {
+        float: left;
+    }
+
+    .mail-info {
+        font-size: 0.75rem;
+        margin-left: 0.5rem;
+        :nth-child(3) {
+            font-weight: bold;
+        }
+    }
+
+    .to-address {
+        font-size: 0.75rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--light);
+    }
+}
+
+.mails {
+    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 60px);
+    overflow: auto;
+}
