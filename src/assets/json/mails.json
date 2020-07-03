@@ -1,0 +1,12 @@
+[
+    {
+        "headers": {
+            "subject": "Advertisement",
+            "date": "Thu, 4 Mar 2020 04:30 PM",
+            "from": "An email",
+            "to": "An email",
+            "sender": "An email",
+            "body": "__Advertisement :)__ \n - __[pica](https://nodeca.github.io/pica/demo/)__ - high quality and fast image \n              resize in browser.            - __[babelfish](https://github.com/nodeca/babelfish/)__ - developer friendly \n \n               i18n with plurals support and easy syntax. \n              \n           You will like those projects!"
+        }
+    }
+]

@@ -1,16 +1,15 @@
-import { IUserState } from '../ILogin';
-import { loginActionTypes } from './actionTypes';
+import { mailActionTypes } from './actionTypes';
 import { IAction } from '../../../Model';
 
-const defaultState: IUserState = {
+const defaultState: any = {
   username: '',
   name: '',
   token: localStorage.getItem('auth_token') || '',
 };
 
-const userReducer = (state: IUserState = defaultState, action: IAction): IUserState => {
+const userReducer = (state: any = defaultState, action: IAction): any => {
   switch (action.type) {
-    case loginActionTypes.VALIDATE_USER: {
+    case mailActionTypes.VALIDATE_USER: {
       return { ...state, ...action.payload  };
     }
     default: {

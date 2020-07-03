@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { IAppState } from '../../Model';
-import { validateUser } from './redux/actions';
-import Mail from './mail';
+import { displayMails } from './redux/actions';
+import { SideBar } from './SideBar';
 
 const mapStateToProps = (state: IAppState) => {
   return {
@@ -11,11 +11,11 @@ const mapStateToProps = (state: IAppState) => {
 
 const mapDispatchToProps = (dispatch: Function) => {
   return {
-    validateUser: (credentials: any) => dispatch(validateUser(credentials)),
+    displayMails: (category: string) => dispatch(displayMails(category)),
   };
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Mail);
+)(SideBar);

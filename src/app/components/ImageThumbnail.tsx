@@ -4,6 +4,7 @@ export interface IImageThumbnail {
     src: string;
     title: string;
     width?: string;
+    className?: string;
 }
 
 const ImageThumbnail: React.SFC<IImageThumbnail> = (props: IImageThumbnail) => (
