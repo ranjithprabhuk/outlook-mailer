@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render } from 'enzyme';
-import MailCard from '../src/app/components/MailCard';
+import { MailCard } from '../src/app/components';
 
 describe('Test case for Mail Card Component', () => {
     const props = {sender: 'Ranjithprabhu', content: 'Some dunmmu mail content'}

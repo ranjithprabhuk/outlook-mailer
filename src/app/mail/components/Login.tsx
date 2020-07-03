@@ -2,8 +2,7 @@ import * as React from 'react';
 import { ILoginProps } from '../ILogin';
 import * as ReactMarkdown from 'react-markdown';
 
-import { ButtonComponent } from '../../components';
-import { MailCard } from '../../components';
+import { ButtonComponent, ImageThumbnail, MailCard } from '../../components';
 import '../mail.scss';
 
 const markdown = '# This is a H1  \n## This is a H2  \n###### This is a H6';
@@ -20,7 +19,7 @@ export const Mail: React.FC<ILoginProps> = (props: ILoginProps) => {
           </ul>
           <ul className='navbar-nav'>
             <input className='form-control mr-sm-2' type='search' placeholder='Search' aria-label='Search' />
-            <img title='Ranjithprabhu' width='38px' src='./assets/images/ranjithprabhu.jpg' className='rounded-circle' alt='...' />
+            <ImageThumbnail src='./assets/images/ranjithprabhu.jpg' title='' />
             <ButtonComponent className='btn btn-outline-danger' text='Logout' />
           </ul>
         </div>
