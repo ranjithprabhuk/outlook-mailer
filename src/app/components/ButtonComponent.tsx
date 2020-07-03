@@ -2,7 +2,9 @@ import * as React from 'react';
 
 export interface IButtonComponent {
     text: string;
-    value: any;
+    value?: any;
+    className?: string;
+    onClick?: any;
 }
 
 const ButtonComponent: React.SFC<IButtonComponent> = (props: IButtonComponent) => (

@@ -3,6 +3,7 @@ import { ILoginProps } from '../ILogin';
 import * as ReactMarkdown from 'react-markdown';
 
 import { ButtonComponent } from '../../components';
+import { MailCard } from '../../components';
 import '../mail.scss';
 
 const markdown = '# This is a H1  \n## This is a H2  \n###### This is a H6';
@@ -20,9 +21,7 @@ export const Mail: React.FC<ILoginProps> = (props: ILoginProps) => {
           <ul className='navbar-nav'>
             <input className='form-control mr-sm-2' type='search' placeholder='Search' aria-label='Search' />
             <img title='Ranjithprabhu' width='38px' src='./assets/images/ranjithprabhu.jpg' className='rounded-circle' alt='...' />
-            <button className='btn btn-outline-danger' type='button'>
-              Logout
-          </button>
+            <ButtonComponent className='btn btn-outline-danger' text='Logout' />
           </ul>
         </div>
       </nav>
@@ -30,46 +29,18 @@ export const Mail: React.FC<ILoginProps> = (props: ILoginProps) => {
         <div className='row'>
           <div className='col-2 sidebar'>
             <div className='mails'>
-              <div className='mail-card'>
-                <h6 className='mail-title truncate'>Ranjithprabhu Kumar</h6>
-                <p className='mail-text truncate'>Some quick example text to build on the
-                card title and make up the bulk of the card's content.</p>
-              </div>
-              <div className='mail-card'>
-                <h6 className='mail-title truncate'>Ranjithprabhu Kumar</h6>
-                <p className='mail-text truncate'>Some quick example text to build on the
-                card title and make up the bulk of the card's content.</p>
-              </div>
-              <div className='mail-card'>
-                <h6 className='mail-title truncate'>Ranjithprabhu Kumar</h6>
-                <p className='mail-text truncate'>Some quick example text to build on the card
-                title and make up the bulk of the card's content.</p>
-              </div>
-              <div className='mail-card'>
-                <h6 className='mail-title truncate'>Ranjithprabhu Kumar</h6>
-                <p className='mail-text truncate'>Some quick example text to build on the card
-                title and make up the bulk of the card's content.</p>
-              </div>
-              <div className='mail-card'>
-                <h6 className='mail-title truncate'>Ranjithprabhu Kumar</h6>
-                <p className='mail-text truncate'>Some quick example text to build on the card
-                title and make up the bulk of the card's content.</p>
-              </div>
-              <div className='mail-card'>
-                <h6 className='mail-title truncate'>Ranjithprabhu Kumar</h6>
-                <p className='mail-text truncate'>Some quick example text to build on the card
-                title and make up the bulk of the card's content.</p>
-              </div>
-              <div className='mail-card'>
-                <h6 className='mail-title truncate'>Ranjithprabhu Kumar</h6>
-                <p className='mail-text truncate'>Some quick example text to build on the card
-                title and make up the bulk of the card's content.</p>
-              </div>
-              <div className='mail-card'>
-                <h6 className='mail-title truncate'>Ranjithprabhu Kumar</h6>
-                <p className='mail-text truncate'>Some quick example text to build on the card
-                title and make up the bulk of the card's content.</p>
-              </div>
+              <MailCard
+                sender='Ranjithprabhu Kumar'
+                content='Some quick example text to build some dummy text'
+              />
+              <MailCard
+                sender='Ranjithprabhu Kumar'
+                content='Some quick example text to build some dummy text'
+              />
+              <MailCard
+                sender='Ranjithprabhu Kumar'
+                content='Some quick example text to build some dummy text'
+              />
             </div>
           </div>
           <div className='col-10 mail-viewer'>
