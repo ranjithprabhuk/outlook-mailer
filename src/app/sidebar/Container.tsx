@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
-import { IAppState } from '../../Model';
+// import { IAppState } from '../../Model';
 import { displayMails } from './redux/actions';
 import { SideBar } from './SideBar';
 
-const mapStateToProps = (state: IAppState) => {
+const mapStateToProps = (state: any) => {
   return {
-    state,
+    mails: state.mail.mails || [],
   };
 };
 
