@@ -35,35 +35,43 @@ export const Mail: React.FC<ILoginProps> = (props: ILoginProps) => {
             <div className='mails'>
               <div className='mail-card'>
                 <h6 className='mail-title truncate'>Ranjithprabhu Kumar</h6>
-                <p className='mail-text truncate'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p className='mail-text truncate'>Some quick example text to build on the
+                card title and make up the bulk of the card's content.</p>
               </div>
               <div className='mail-card'>
                 <h6 className='mail-title truncate'>Ranjithprabhu Kumar</h6>
-                <p className='mail-text truncate'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p className='mail-text truncate'>Some quick example text to build on the
+                card title and make up the bulk of the card's content.</p>
               </div>
               <div className='mail-card'>
                 <h6 className='mail-title truncate'>Ranjithprabhu Kumar</h6>
-                <p className='mail-text truncate'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p className='mail-text truncate'>Some quick example text to build on the card
+                title and make up the bulk of the card's content.</p>
               </div>
               <div className='mail-card'>
                 <h6 className='mail-title truncate'>Ranjithprabhu Kumar</h6>
-                <p className='mail-text truncate'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p className='mail-text truncate'>Some quick example text to build on the card
+                title and make up the bulk of the card's content.</p>
               </div>
               <div className='mail-card'>
                 <h6 className='mail-title truncate'>Ranjithprabhu Kumar</h6>
-                <p className='mail-text truncate'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p className='mail-text truncate'>Some quick example text to build on the card
+                title and make up the bulk of the card's content.</p>
               </div>
               <div className='mail-card'>
                 <h6 className='mail-title truncate'>Ranjithprabhu Kumar</h6>
-                <p className='mail-text truncate'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p className='mail-text truncate'>Some quick example text to build on the card
+                title and make up the bulk of the card's content.</p>
               </div>
               <div className='mail-card'>
                 <h6 className='mail-title truncate'>Ranjithprabhu Kumar</h6>
-                <p className='mail-text truncate'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p className='mail-text truncate'>Some quick example text to build on the card
+                title and make up the bulk of the card's content.</p>
               </div>
               <div className='mail-card'>
                 <h6 className='mail-title truncate'>Ranjithprabhu Kumar</h6>
-                <p className='mail-text truncate'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p className='mail-text truncate'>Some quick example text to build on the card
+                title and make up the bulk of the card's content.</p>
               </div>
             </div>
           </div>
