@@ -10,13 +10,13 @@ export interface IMailState {
 
 export interface IMails {
     id: string;
-    subject: string,
-    date: string,
-    from: string,
-    to: string,
-    sender: string,
-    content: string
-    isNew: boolean,
-    isArchived: boolean,
+    subject: string;
+    date: string;
+    from: string;
+    to: string;
+    sender: string;
+    content: string;
+    isNew: boolean;
+    isArchived: boolean;
     senderImageSrc: string;
 }

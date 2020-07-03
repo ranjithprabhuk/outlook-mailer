@@ -1,4 +1,4 @@
-import { IMails } from "../mail/IMail";
+import { IMails } from '../mail/IMail';
 
 export interface IMailViewerProps {
     selectedMail: IMails | null;
