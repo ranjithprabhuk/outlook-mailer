@@ -2,6 +2,7 @@ import {applyMiddleware, compose, createStore, Store} from 'redux';
 import {IAppState, rootReducer} from '../Reducer';
 import {routerMiddleware} from 'react-router-redux';
 import {History} from 'history';
+import Redux from 'redux-thunk';
 
 interface IHotModule {
   hot?: { accept: (path: string, callback: () => void) => void };
@@ -15,7 +16,7 @@ export function configureStore(history: History): Store<IAppState> {
   const routingMiddleware = routerMiddleware(history);
   const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   const enhancers = composeEnhancers(
-    applyMiddleware(routingMiddleware),
+    applyMiddleware(routingMiddleware, Redux),
   );
 
   const result = createStore<IAppState>(rootReducer, enhancers);
