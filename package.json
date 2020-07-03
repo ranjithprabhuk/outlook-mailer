@@ -2,7 +2,7 @@
   "name": "outlook-mailer",
   "version": "1.0.0",
   "description": "simple mailer application",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "build:webpack": "cross-env NODE_ENV=production webpack --config config/webpack.prod.config.js  --progress --profile --colors",
     "build": "npm run clean && npm run build:webpack",
