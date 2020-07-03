@@ -4,6 +4,14 @@ import { ILoginFormParams, IUserState } from '../ILogin';
 import axios from 'axios';
 import { APP_CONFIG } from '../../../utils/app.constants';
 
+export const setUserInformation = (data: IUserState): IAction => {
+  return {
+    type: loginActionTypes.VALIDATE_USER,
+    payload: {
+      ...data,
+    },
+  };
+};
 
 export const validateUser = (credentials: ILoginFormParams): Function => {
   return (dispatch: Function) => {
@@ -17,14 +25,5 @@ export const validateUser = (credentials: ILoginFormParams): Function => {
       }).catch(() => {
         // todo: write a commom block to handle the exceptions
       });
-  };
-};
-
-export const setUserInformation = (data: IUserState): IAction => {
-  return {
-    type: loginActionTypes.VALIDATE_USER,
-    payload: {
-      ...data,
-    },
   };
 };

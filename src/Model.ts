@@ -1,7 +1,7 @@
 import { RouterState } from 'react-router-redux';
 import { IUserState } from './app/login';
 import { FormStateMap } from 'redux-form';
-import { Reducer } from "redux";
+import { Reducer } from 'redux';
 
 export interface IAppState {
   routing: RouterState;

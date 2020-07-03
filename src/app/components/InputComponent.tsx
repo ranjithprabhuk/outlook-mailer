@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const InputComponent: React.SFC = (props: any) => (
+const InputComponent: React.SFC<any> = (props: any) => (
     <div className='form-group'>
         <label>{props.label}</label>
         <input

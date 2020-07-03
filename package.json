@@ -32,20 +32,17 @@
   },
   "homepage": "https://github.com/ranjithprabhuk/outlook-mailer#readme",
   "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
+    "verbose": true,
+    "testURL": "http://localhost/",
+    "moduleFileExtensions": ["ts", "tsx", "js"],
     "transform": {
-      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      "^.+\\.tsx?$": "ts-jest"
     },
     "setupFiles": [
-      "./config/test.shim.js",
-      "./config/test.setup.js"
+      "raf/polyfill"
     ],
-    "setupTestFrameworkScriptFile": "./config/test.setup.ts",
-    "testRegex": "/*.spec.(ts|tsx|js)$"
+    "testRegex": "/tests/.*\\.(ts|tsx|js)$",
+    "setupTestFrameworkScriptFile": "./config/test.setup.js"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
