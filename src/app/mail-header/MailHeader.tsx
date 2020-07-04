@@ -4,12 +4,28 @@ import { IMailHeaderProps, MailCategory } from './IMailHeader';
 import { withRouter } from 'react-router-dom';
 
 const MailHeader: React.FC<IMailHeaderProps> = (props: IMailHeaderProps) => {
-  const { mails, archivedMails, newMails, updateSelectedCategory, updateSearchText, selectedCategory, logout, history, user } = props;
+  const {
+    mails,
+    archivedMails,
+    newMails,
+    updateSelectedCategory,
+    updateSearchText,
+    selectedCategory,
+    logout,
+    history,
+    user,
+    updateSelectedMail,
+  } = props;
   const { NEW, ARCHIVED, TOTAL } = MailCategory;
   const logoutUser = () => {
     history.push('/login');
     logout();
   };
+  const categorySelection = (category: string) => {
+    updateSelectedCategory(category);
+    updateSelectedMail();
+  };
+
   return (
     <nav className='navbar navbar-expand-sm navbar-light bg-light'>
       <div className='collapse navbar-collapse justify-content-between'>
@@ -19,21 +35,21 @@ const MailHeader: React.FC<IMailHeaderProps> = (props: IMailHeaderProps) => {
               className={selectedCategory === NEW ? 'btn-primary text-white' : ''}
               text={NEW}
               value={newMails.length}
-              onClick={() => updateSelectedCategory(NEW)}
+              onClick={() => categorySelection(NEW)}
             />}
           {archivedMails &&
             <ButtonComponent
               className={selectedCategory === ARCHIVED ? 'btn-primary text-white' : ''}
               text={ARCHIVED}
               value={archivedMails.length}
-              onClick={() => updateSelectedCategory(ARCHIVED)}
+              onClick={() => categorySelection(ARCHIVED)}
             />}
           {archivedMails &&
             <ButtonComponent
               className={selectedCategory === TOTAL ? 'btn-primary text-white' : ''}
               text={TOTAL}
               value={mails.length - archivedMails.length}
-              onClick={() => updateSelectedCategory(TOTAL)}
+              onClick={() => categorySelection(TOTAL)}
             />}
         </ul>
         <ul className='navbar-nav'>

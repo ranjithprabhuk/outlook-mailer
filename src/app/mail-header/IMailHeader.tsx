@@ -4,6 +4,7 @@ import { IUserState } from '../login';
 interface IProps {
     updateSelectedCategory: any;
     updateSearchText: any;
+    updateSelectedMail: any;
     selectedCategory: string;
     logout: any;
     history: any;
