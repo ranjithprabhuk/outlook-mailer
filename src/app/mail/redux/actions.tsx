@@ -6,6 +6,7 @@ import { updateSelectedMail } from '../../sidebar/redux';
 import { IMails } from '../IMail';
 import { MailCategory } from '../../mail-header/IMailHeader';
 import { updateSelectedCategory } from '../../mail-header/redux';
+import { showAlert } from '../../alert/redux';
 
 export const setMailInfo = (mails: IMails[]): IAction => {
   const newMails: IMails[] = [];
@@ -53,5 +54,26 @@ export const fetchMails = (): Function => {
       }).catch(() => {
         // todo: write a commom block to handle the exceptions
       });
+  };
+};
+
+export const updateArchiveState = (mail: IMails): IAction => {
+  return {
+    type: mailActionTypes.TOGGLE_ARCHIVE_MAILS,
+    payload: {
+      mail,
+    },
+  };
+};
+
+export const toggleArchive = (mail: IMails): Function => {
+  return (dispatch: Function) => {
+    mail.isArchived = !mail.isArchived;
+    const archiveText = mail.isArchived ? 'Archived' : 'Unarchived';
+    const category = mail.isArchived ? MailCategory.ARCHIVED : MailCategory.TOTAL;
+    dispatch(updateArchiveState(mail));
+    dispatch(updateSelectedCategory(category));
+    dispatch(updateSelectedMail(mail));
+    dispatch(showAlert('primary', `Mail ${archiveText} successfully!`));
   };
 };
