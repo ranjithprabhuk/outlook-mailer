@@ -66,6 +66,15 @@ export const updateArchiveState = (mail: IMails): IAction => {
   };
 };
 
+export const updateDeleteState = (mail: IMails): IAction => {
+  return {
+    type: mailActionTypes.DELETE_MAILS,
+    payload: {
+      mail,
+    },
+  };
+};
+
 export const toggleArchive = (mail: IMails): Function => {
   return (dispatch: Function) => {
     mail.isArchived = !mail.isArchived;
@@ -75,5 +84,13 @@ export const toggleArchive = (mail: IMails): Function => {
     dispatch(updateSelectedCategory(category));
     dispatch(updateSelectedMail(mail));
     dispatch(showAlert('primary', `Mail ${archiveText} successfully!`));
+  };
+};
+
+export const deleteMail = (mail: IMails): Function => {
+  return (dispatch: Function) => {
+    dispatch(updateDeleteState(mail));
+    dispatch(updateSelectedMail(null as any));
+    dispatch(showAlert('danger', `Mail deleted successfully!`));
   };
 };
