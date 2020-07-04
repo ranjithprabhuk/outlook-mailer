@@ -75,6 +75,10 @@ $mailviewwer-width: calc(100vw - 250px);
         max-height: calc(100vh - 200px);
         overflow: auto;
     }
+
+    .no-mail {
+        margin-top: 1rem;
+    }
 }
 
 .mails {

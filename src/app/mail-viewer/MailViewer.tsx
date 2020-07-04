@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as ReactMarkdown from 'react-markdown';
 import { IMailViewerProps } from './IMailViewer';
 import { ButtonComponent, ImageThumbnail } from '../components';
+import { NoMail } from './components';
 
 export const MailViewer: React.FC<IMailViewerProps> = (props: IMailViewerProps) => {
   const { selectedMail, toggleArchive, deleteMail } = props;
@@ -41,7 +42,7 @@ export const MailViewer: React.FC<IMailViewerProps> = (props: IMailViewerProps) 
           </div>
         </div>
       }
-      {!selectedMail && 'Select a Mail to Display'}
+      {!selectedMail && <NoMail />}
     </div>
   );
 };
