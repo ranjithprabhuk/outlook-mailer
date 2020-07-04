@@ -6,7 +6,7 @@ import { ButtonComponent, ImageThumbnail } from '../components';
 export const MailViewer: React.FC<IMailViewerProps> = (props: IMailViewerProps) => {
   const { selectedMail, toggleArchive, deleteMail } = props;
   return (
-    <div className='col-10 mail-viewer'>
+    <div className='col mail-viewer'>
       {selectedMail &&
         <div className='row'>
           <div className='col-12 mail-buttons'>

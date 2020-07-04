@@ -1,5 +1,5 @@
 $sidebar-width: 250px;
-$mailviewwer-width: calc(100vw - 270px);
+$mailviewwer-width: calc(100vw - 250px);
 
 .btn {
     margin: 0rem 0.5rem;
@@ -11,6 +11,8 @@ $mailviewwer-width: calc(100vw - 270px);
     max-width: $sidebar-width !important;
     border-right: 4px solid var(--light);
     padding: 0rem !important;
+    max-height: calc(100vh - 54px);
+    overflow: auto;
 
     .mail-card {
         border-bottom: 1px solid var(--gray);
@@ -67,6 +69,11 @@ $mailviewwer-width: calc(100vw - 270px);
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
         border-bottom: 2px solid var(--light);
+    }
+
+    .mail-body {
+        max-height: calc(100vh - 200px);
+        overflow: auto;
     }
 }
 

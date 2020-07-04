@@ -27,7 +27,7 @@ export const SideBar: React.FC<ISideBarProps> = (props: ISideBarProps) => {
   const mailsToBeDisplayed = filterMails(mails, selectedCategory, searchText);
 
   return (
-    <div className='col-2 sidebar'>
+    <div className='col sidebar'>
       <div className='mails'>
         {mailsToBeDisplayed.map((mail: IMails) => (
           <MailCard
