@@ -24,6 +24,6 @@ export const toggleReply = (selectedMail: IMails): any => {
 export const sendMail = (mail: IMails): Function => {
   return (dispatch: Function) => {
     dispatch(toggleReply(mail));
-    dispatch(showAlert('primary', `Mail $sent successfully!`));
+    dispatch(showAlert('primary', `Mail sent successfully!`));
   };
 };
