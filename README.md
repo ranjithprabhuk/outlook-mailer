@@ -4,7 +4,7 @@ A simple app like outlook mailer
 
 Demo
 ----------------------------------
-* [Outlook-Mailer] (https://outlook-mailer.herokuapp.com)
+* [Outlook-Mailer] (https://ranjithprabhuk.github.io/outlook-mailer/outlook-mailer/)
 
 Prerequisites
 ----------------------------------
