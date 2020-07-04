@@ -8,7 +8,7 @@ const defaultState: IMailViewerState = {
   selectedMail: null,
 };
 
-const mailHeaderReducer = (state: IMailViewerState = defaultState, action: IAction): IMailViewerState => {
+const mailViewerReducer = (state: IMailViewerState = defaultState, action: IAction): IMailViewerState => {
   switch (action.type) {
     case mailViewerActionTypes.DISPLAY_SELECTED_EMAILS: {
       return { ...state, ...action.payload  };
@@ -19,4 +19,4 @@ const mailHeaderReducer = (state: IMailViewerState = defaultState, action: IActi
   }
 };
 
-export default mailHeaderReducer;
+export default mailViewerReducer;
