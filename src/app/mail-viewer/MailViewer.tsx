@@ -4,7 +4,7 @@ import { IMailViewerProps } from './IMailViewer';
 import { ButtonComponent, ImageThumbnail } from '../components';
 
 export const MailViewer: React.FC<IMailViewerProps> = (props: IMailViewerProps) => {
-  const { selectedMail, toggleArchive } = props;
+  const { selectedMail, toggleArchive, deleteMail } = props;
   return (
     <div className='col-10 mail-viewer'>
       {selectedMail &&
@@ -16,7 +16,7 @@ export const MailViewer: React.FC<IMailViewerProps> = (props: IMailViewerProps) 
               text={selectedMail.isArchived ? 'UnArchive' : 'Archive'}
               onClick={() => toggleArchive(selectedMail)}
             />
-            <ButtonComponent className='btn-sm btn-outline-danger' text='Delete' />
+            <ButtonComponent className='btn-sm btn-outline-danger' text='Delete' onClick={() => deleteMail(selectedMail)} />
           </div>
           <div className='col-12'>
             <div className='mail-user-thumbnail'>

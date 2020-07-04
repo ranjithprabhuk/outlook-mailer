@@ -8,11 +8,15 @@ const defaultState: IMailState = {
   newMails: [],
 };
 
-export const getMailInfo = (mails: IMails[], selectedMail: IMails): IMailState => {
+export const getMailInfo = (mails: IMails[], selectedMail: IMails, action: string): IMailState => {
   const newMails: IMails[] = [];
   const archivedMails: IMails[] = [];
+  if (action === 'delete') {
+    const index = mails.findIndex(mail => mail.id === selectedMail.id);
+    mails.splice(index, 1);
+  }
   (mails || []).forEach((mail: IMails) => {
-    if (selectedMail && selectedMail.id === mail.id) {
+    if (action === 'update' && selectedMail && selectedMail.id === mail.id) {
       mail.isArchived = mail.isArchived;
       mail.isNew = false;
     }
@@ -36,7 +40,11 @@ const mailReducer = (state: IMailState = defaultState, action: IAction): IMailSt
       return { ...state, ...action.payload };
     }
     case mailActionTypes.TOGGLE_ARCHIVE_MAILS: {
-      const { mails, archivedMails, newMails } = getMailInfo(state.mails, action.payload.mail);
+      const { mails, archivedMails, newMails } = getMailInfo(state.mails, action.payload.mail, 'update');
+      return { ...state, mails, archivedMails, newMails };
+    }
+    case mailActionTypes.DELETE_MAILS: {
+      const { mails, archivedMails, newMails } = getMailInfo(state.mails, action.payload.mail, 'delete');
       return { ...state, mails, archivedMails, newMails };
     }
     default: {

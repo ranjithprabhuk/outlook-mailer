@@ -1,4 +1,4 @@
 export { default } from './reducer';
 export { mailActionTypes } from './actionTypes';
-export { fetchMails, toggleArchive } from './actions';
+export { fetchMails, toggleArchive, deleteMail } from './actions';
 
