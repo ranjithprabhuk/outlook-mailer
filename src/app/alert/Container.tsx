@@ -1,22 +1,21 @@
 import { connect } from 'react-redux';
 import { IAppState } from '../../Model';
-import { Login } from './Login';
-import { validateUser } from './redux/actions';
-import { ILoginFormParams } from './ILogin';
+import { clearAlertMessage } from './redux/actions';
+import { Alert } from './Alert';
 
 const mapStateToProps = (state: IAppState) => {
   return {
-    state,
+    alert: state.alert,
   };
 };
 
 const mapDispatchToProps = (dispatch: Function) => {
   return {
-    validateUser: (credentials: ILoginFormParams) => dispatch(validateUser(credentials)),
+    clearAlert: () => dispatch(clearAlertMessage()),
   };
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Login);
+)(Alert);

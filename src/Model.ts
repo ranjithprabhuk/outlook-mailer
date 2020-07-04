@@ -6,6 +6,7 @@ import { IMailState } from './app/mail/IMail';
 import { IMailHeaderState } from './app/mail-header/IMailHeader';
 import { IMailViewerState } from './app/mail-viewer/IMailViewer';
 import { ISideBarState } from './app/sidebar/ISideBar';
+import { IAlertState } from './app/alert/IALert';
 
 export interface IAppState {
   routing: RouterState;
@@ -15,6 +16,7 @@ export interface IAppState {
   mailHeader: IMailHeaderState;
   mailViewer: IMailViewerState;
   sidebar: ISideBarState;
+  alert: IAlertState;
 }
 
 export interface IAction {

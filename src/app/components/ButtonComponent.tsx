@@ -8,7 +8,7 @@ export interface IButtonComponent {
 }
 
 const ButtonComponent: React.SFC<IButtonComponent> = (props: IButtonComponent) => (
-    <button className='btn btn-outline-primary' type='button' {...props}>
+    <button {...props} className={`btn btn-outline-primary ${props.className}`} type='button'>
         {props.text} {props.value && <span className='badge badge-light'>{props.value}</span>}
     </button>
 );

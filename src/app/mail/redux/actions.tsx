@@ -2,22 +2,51 @@ import { mailActionTypes } from './actionTypes';
 import { IAction } from '../../../Model';
 import axios from 'axios';
 import { APP_CONFIG } from '../../../utils/app.constants';
+import { updateSelectedMail } from '../../sidebar/redux';
+import { IMails } from '../IMail';
+import { MailCategory } from '../../mail-header/IMailHeader';
+import { updateSelectedCategory } from '../../mail-header/redux';
 
-export const setMailInfo = (mails: any): IAction => {
+export const setMailInfo = (mails: IMails[]): IAction => {
+  const newMails: IMails[] = [];
+  const archivedMails: IMails[] = [];
+  (mails || []).forEach((mail: IMails) => {
+    if (mail.isNew) {
+      newMails.push(mail);
+    }
+    if (mail.isArchived) {
+      archivedMails.push(mail);
+    }
+  });
   return {
     type: mailActionTypes.FETCH_MAILS,
     payload: {
       mails,
+      newMails,
+      archivedMails,
     },
   };
 };
 
+const getCategoryInfo = (mail: IMails): string => {
+  if (mail.isNew) {
+    return MailCategory.NEW;
+  } else if (mail.isArchived) {
+    return MailCategory.TOTAL;
+  }
+
+  return MailCategory.TOTAL;
+};
+
 export const fetchMails = (): Function => {
   return (dispatch: Function) => {
-    setMailInfo({} as any); // clear the mail information
+    setMailInfo([]); // clear the mail information
     return axios.get(`${APP_CONFIG.serviceBase}mails.json`)
       .then(res => {
-        if (res.data) {
+        if (res.data && res.data.length > 0) {
+          const latestMail = res.data[0];
+          dispatch(updateSelectedCategory(getCategoryInfo(latestMail)));
+          dispatch(updateSelectedMail(latestMail));
           dispatch(setMailInfo(res.data));
           return res.data;
         }

@@ -4,4 +4,5 @@ export const labels = {
 
 export const APP_CONFIG = {
   serviceBase: '/assets/json/',
+  alertTimeout: 3000, // milli seconds
 };

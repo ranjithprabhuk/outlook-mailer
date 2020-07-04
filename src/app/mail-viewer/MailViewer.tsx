@@ -10,9 +10,9 @@ export const MailViewer: React.FC<IMailViewerProps> = (props: IMailViewerProps) 
       {selectedMail &&
         <div className='row'>
           <div className='col-12 mail-buttons'>
-            <ButtonComponent text='Reply' />
-            <ButtonComponent text='Archive' />
-            <ButtonComponent className='btn btn-outline-danger' text='Delete' />
+            <ButtonComponent className='btn-sm' text='Reply' />
+            <ButtonComponent className='btn-sm' text={selectedMail.isArchived ? 'UnArchive' : 'Archive'} />
+            <ButtonComponent className='btn-sm btn-outline-danger' text='Delete' />
           </div>
           <div className='col-12'>
             <div className='mail-user-thumbnail'>
@@ -37,6 +37,7 @@ export const MailViewer: React.FC<IMailViewerProps> = (props: IMailViewerProps) 
           </div>
         </div>
       }
+      {!selectedMail && 'Select a Mail to Display'}
     </div>
   );
 };

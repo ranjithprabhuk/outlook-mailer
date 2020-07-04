@@ -24,6 +24,7 @@ const Login: React.FC<ILoginProps & InjectedFormProps<{}, ILoginProps>> = (props
   const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>): void => {
     event.preventDefault();
     validateUser(form.user.values);
+    props.reset();
   };
 
   return (
