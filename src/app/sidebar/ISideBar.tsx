@@ -5,6 +5,7 @@ export interface ISideBarProps {
     selectedCategory: string;
     searchText: string;
     updateSelectedMail: any;
+    selectedMail: IMails | null;
 }
 
 export interface ISideBarState {

@@ -6,11 +6,15 @@ const defaultState: IUserState = {
   username: '',
   name: '',
   token: localStorage.getItem('auth_token') || '',
+  userImage: '',
 };
 
 const userReducer = (state: IUserState = defaultState, action: IAction): IUserState => {
   switch (action.type) {
     case loginActionTypes.VALIDATE_USER: {
+      return { ...state, ...action.payload  };
+    }
+    case loginActionTypes.CLEAR_USER_INFO: {
       return { ...state, ...action.payload  };
     }
     default: {

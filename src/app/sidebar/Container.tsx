@@ -9,6 +9,7 @@ const mapStateToProps = (state: IAppState) => {
     mails: state.mail.mails || [],
     selectedCategory: state.mailHeader.selectedCategory,
     searchText: state.mailHeader.searchText,
+    selectedMail: state.sidebar.selectedMail,
   };
 };
 

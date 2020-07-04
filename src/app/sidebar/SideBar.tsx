@@ -23,8 +23,9 @@ const filterMails = (mails: IMails[], category: string, searchText: string): IMa
 };
 
 export const SideBar: React.FC<ISideBarProps> = (props: ISideBarProps) => {
-  const { selectedCategory, mails, updateSelectedMail, searchText } = props;
+  const { selectedCategory, mails, updateSelectedMail, searchText, selectedMail } = props;
   const mailsToBeDisplayed = filterMails(mails, selectedCategory, searchText);
+
   return (
     <div className='col-2 sidebar'>
       <div className='mails'>
@@ -33,6 +34,7 @@ export const SideBar: React.FC<ISideBarProps> = (props: ISideBarProps) => {
             key={mail.id}
             sender={mail.sender}
             content={mail.content}
+            className={selectedMail && selectedMail.id === mail.id ? 'is-selected' : ''}
             onClick={() => updateSelectedMail(mail)}
           />))}
       </div>
