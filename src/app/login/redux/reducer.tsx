@@ -4,9 +4,9 @@ import { IAction } from '../../../Model';
 
 const defaultState: IUserState = {
   username: '',
-  name: '',
+  name: localStorage.getItem('name') || '',
   token: localStorage.getItem('auth_token') || '',
-  userImage: '',
+  userImage: localStorage.getItem('userImage') || '',
 };
 
 const userReducer = (state: IUserState = defaultState, action: IAction): IUserState => {

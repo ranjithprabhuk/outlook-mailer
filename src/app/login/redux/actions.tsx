@@ -7,6 +7,8 @@ import { showAlert } from '../../alert/redux';
 
 export const setUserInformation = (data: IUserState): IAction => {
   localStorage.setItem('auth_token', btoa(data.token));
+  localStorage.setItem('userImage', data.userImage);
+  localStorage.setItem('name', data.name);
   return {
     type: loginActionTypes.VALIDATE_USER,
     payload: {
@@ -17,12 +19,15 @@ export const setUserInformation = (data: IUserState): IAction => {
 
 export const clearUserInformation = (): IAction => {
   localStorage.removeItem('auth_token');
+  localStorage.removeItem('userImage');
+  localStorage.removeItem('name');
   return {
     type: loginActionTypes.CLEAR_USER_INFO,
     payload: {
       token: '',
       username: '',
       name: '',
+      userImage: '',
     },
   };
 };

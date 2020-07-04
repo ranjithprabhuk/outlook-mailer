@@ -12,6 +12,9 @@ const sidebarReducer = (state: ISideBarState = defaultState, action: IAction): I
     case sideBarActionTypes.UPDATE_SELECTED_EMAILS: {
       return { ...state, selectedMail: action.payload.selectedMail };
     }
+    case sideBarActionTypes.TOGGLE_REPLY: {
+      return { ...state, selectedMail: action.payload.selectedMail };
+    }
     default: {
       return state;
     }
